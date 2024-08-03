@@ -12,6 +12,18 @@ async def on_ready():
     print(f'We have logged in as {bot.user}')
 
 @bot.command()
+async def help_me(ctx):
+    await ctx.send("Aquí tienes una lista de comandos (N significa un número): ")
+    await ctx.send("$hello")
+    await ctx.send("$heh N")
+    await ctx.send("$flip_coin")
+    await ctx.send("$gen_emoji")
+    await ctx.send("$add N N")
+    await ctx.send("$gen_pass")
+    await ctx.send("$roll NdN")
+    await ctx.send("$repeat N palabra")
+    
+@bot.command()
 async def hello(ctx):
     await ctx.send(f'Que tal, soy un bot {bot.user}!')
 
@@ -23,9 +35,9 @@ async def heh(ctx, count_heh = 5):
 async def flip(ctx):
     flip = random.randint(0, 2)
     if flip == 0:
-        await ctx.send("HEADS")
+        await ctx.send("CRUZ")
     else:
-        await ctx.send("TAILS")
+        await ctx.send("CARA")
 
 @bot.command() 
 async def gen_emoji(ctx):
